@@ -5,7 +5,7 @@ use near_sdk::{log ,env, Balance, Promise, AccountId, near_bindgen};
 
 const NUMERO_JUGADORES: usize = 2;
 const NUMERO_RESPUESTAS: usize = 5;
-const YOCTONEAR: u128 = 1_000_000_000_000_000_000_000_000;
+//const YOCTONEAR: u128 = 1_000_000_000_000_000_000_000_000;
 
 fn generate_random_array() -> Vec<usize> {
     //let mut rng = rand::thread_rng();
@@ -108,17 +108,20 @@ impl Contract {
     }
 
     #[payable]
-    pub fn first_player(&mut self, amount: Balance, vector: Vec<usize>) {
+    pub fn first_player(&mut self, vector: Vec<usize>) {
         let jugadores_ = self.jugadores.len();
         assert!(jugadores_ != NUMERO_JUGADORES, "The game finished!");
         let jugador = env::signer_account_id();
+
         //log!("\nCurrent: {}\nPredecessor: {}\nSigner: {}", env::current_account_id(), env::predecessor_account_id(), env::signer_account_id());
-        log!("\nAmount: {}", amount*YOCTONEAR);
+
         if jugadores_ == 0 {
+            let amount = env::attached_deposit();
+            log!("\nAmount: {}", amount);
             env::log_str("You are the first player, you stable the bet amount.");
             self.jugadores.push(jugador);
             self.respuestas.push(vector);
-            Promise::new(env::current_account_id()).transfer(amount*YOCTONEAR); //no funciona, que raro....
+            //Promise::new(env::current_account_id()).transfer(amount*YOCTONEAR); //no funciona, que raro....
             self.amount_to_debt = amount;
             env::log_str("Please, wait until another player wants to participate.");
             env::log_str("You can use the 'check' command.");
@@ -134,16 +137,21 @@ impl Contract {
         let jugador = env::signer_account_id();
         self.jugadores.push(jugador);
         let jugadores_ = self.jugadores.len();
-        let amount = self.amount_to_debt.clone();
-        log!("\nAmount: {}", amount*YOCTONEAR);
         assert!(jugadores_ == NUMERO_JUGADORES, "Someone must bet before you.");
+        let amount_to_bet = self.amount_to_debt.clone();
+        let amount_send = env::attached_deposit();
+        assert!(amount_send == amount_to_bet);
+        log!("\nYou have bet: {}", amount_send);
         self.respuestas.push(vector);
-        Promise::new(env::current_account_id()).transfer(amount*YOCTONEAR);
+        //Promise::new(env::current_account_id()).transfer(amount*YOCTONEAR);
         let referencia_clone = self.respuesta_referencia.clone();
         let respuestas_clone = self.respuestas.clone();
         let ganador_numero_ = ganador(referencia_clone, respuestas_clone);
         self.ganador = ganador_numero_;
+        let jugadores_aux = self.jugadores.clone();
+        let user_ganador = jugadores_aux[ganador_numero_].clone();
         env::log_str("You have played. Find the winner using 'check_ganador' command.");
+        Promise::new(user_ganador).transfer(amount_send * 2);
     }
 
     pub fn check_ganador(&self) {
@@ -151,7 +159,7 @@ impl Contract {
         if self.ganador == 2 { 
             env::log_str("There is not winner.");
         } else {
-            log!("Winner {}", self.jugadores[self.ganador]);  
+            log!("Winner: {}", self.jugadores[self.ganador]);  
         }
     }
 
