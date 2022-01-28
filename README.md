@@ -1,27 +1,33 @@
-<<<<<<< HEAD
-# Rust Smart Contract Template
+# Rust Smart Contract - Luky_Game
 
 ## Getting started
 
-To get started with this template:
+To deploy contract:
 
-1. Click the "Use this template" button to create a new repo based on this template
-2. Update line 2 of `Cargo.toml` with your project name
-3. Update line 4 of `Cargo.toml` with your project author names
-4. Set up the [prerequisites](https://github.com/near/near-sdk-rs#pre-requisites)
-5. Begin writing your smart contract in `src/lib.rs`
-6. Test the contract 
+Se puede cambiar semigoso.testnet por la cuenta q se tenga.
 
-    `cargo test -- --nocapture`
+1. Create a account to deploy the contract: 
+    `near create-account luky.semigoso.testnet --masterAccount semigoso.testnet --initialBalance 50`
+2. Construct the .wasm file: ./build.sh
+    `./build.sh`
+3. Deploy the contract in the account:
+    `near deploy $ID --wasmFile res/luky_game.wasm`
+4. Initialize the contract:
+    `near call luky.semigoso.testnet init_lucky --acountId luky.semigoso.testnet`
+5. Create 2 accounts to play using command 1.
+6. Call the function check:
+    `near view luky.semigoso.testnet check --accountId luky.semigoso.testnet`
+7. Call the function first_player from another account:
+    `near call luky.semigoso.testnet first_player '{"amount": 1, "vector": [3, 2, 1, 3, 4]}' --accountId bob.luky.semigoso.testnet`
+8. Call the function check again to see the status of the game.
+9. Call the function second_player from the second account:
+    `near call luky.semigoso.testnet first_player '{"vector": [4, 6, 1, 4, 4]}' --accountId alice.luky.semigoso.testnet`
+10. Call the function check again to see the status of the game.
+11. Call the function check_ganador para revisasr quien es el ganador.
 
-8. Build the contract
-
-    `RUSTFLAGS='-C link-arg=-s' cargo build --target wasm32-unknown-unknown --release`
-
-**Get more info at:**
-
-* [Rust Smart Contract Quick Start](https://docs.near.org/docs/develop/contracts/rust/intro)
-* [Rust SDK Book](https://www.near-sdk.io/)
-=======
+Cosas que faltan:
+    - Los near del testnet no se estan enviando.
+    - Aun falta la funcion que mande el dinero al ganador.
+    - Faltan los unit tests.
 # Lucky_block
 >>>>>>> 735378f0ad13cc2c16574967b38e62a4f7eacd8e
