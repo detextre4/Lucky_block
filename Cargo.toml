@@ -1,7 +1,7 @@
 [package]
-name = "rust-template"
+name = "luky-game"
 version = "0.1.0"
-authors = ["Near Inc <hello@near.org>"]
+authors = ["Near Inc <gomez.sebastian@pucp.pe>"]
 edition = "2018"
 
 [lib]
