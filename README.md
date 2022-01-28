@@ -14,7 +14,7 @@ To deploy contract:
 
 1. Create a account to deploy the contract: 
     `near create-account luky.semigoso.testnet --masterAccount semigoso.testnet --initialBalance 50`
-2. Construct the .wasm file: ./build.sh
+2. Construct the .wasm file: 
     `./build.sh` 
 3. Deploy the contract in the account:
     `near deploy $ID --wasmFile res/luky_game.wasm`
