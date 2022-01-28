@@ -1,6 +1,7 @@
 //nuevo
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
 use near_sdk::{log ,env, Balance, Promise, AccountId, near_bindgen};
+//use rand::Rng; // incompatible con wasm https://github.com/rust-random/rand/issues/715, traté pero no se logró
 
 const NUMERO_JUGADORES: usize = 2;
 const NUMERO_RESPUESTAS: usize = 5;
