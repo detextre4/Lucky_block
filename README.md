@@ -18,16 +18,16 @@ Se puede cambiar semigoso.testnet por la cuenta q se tenga.
 6. Call the function check:
     `near view luky.semigoso.testnet check --accountId luky.semigoso.testnet`
 7. Call the function first_player from another account:
-    `near call luky.semigoso.testnet first_player '{"amount": 1, "vector": [3, 2, 1, 3, 4]}' --accountId bob.luky.semigoso.testnet`
+    `near call luky.semigoso.testnet first_player '{"vector": [3, 2, 1, 3, 4]}' --accountId bob.luky.semigoso.testnet --amount 2`
 8. Call the function check again to see the status of the game.
 9. Call the function second_player from the second account:
-    `near call luky.semigoso.testnet first_player '{"vector": [4, 6, 1, 4, 4]}' --accountId alice.luky.semigoso.testnet`
+    `near call luky.semigoso.testnet first_player '{"vector": [4, 6, 1, 4, 4]}' --accountId alice.luky.semigoso.testnet --amount 2`
 10. Call the function check again to see the status of the game.
-11. Call the function check_ganador para revisasr quien es el ganador.
+11. Call the function check_ganador para revisas quien es el ganador.
+12. Revisa tu estado o llama a la funcion check_ganador.
 
 Cosas que faltan:
-    - Los near del testnet no se estan enviando.
-    - Aun falta la funcion que mande el dinero al ganador.
     - Faltan los unit tests.
+    
 # Lucky_block
 >>>>>>> 735378f0ad13cc2c16574967b38e62a4f7eacd8e
