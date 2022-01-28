@@ -19,7 +19,7 @@ To deploy contract:
 3. Deploy the contract in the account:
     `near deploy $ID --wasmFile res/luky_game.wasm`
 4. Initialize the contract:
-    `near call luky.semigoso.testnet init_lucky --acountId luky.semigoso.testnet`
+    `near call luky.semigoso.testnet init_lucky --accountId luky.semigoso.testnet`
 5. Create 2 accounts to play using command 1.
 6. Call the function check:
     `near view luky.semigoso.testnet check --accountId luky.semigoso.testnet`
@@ -27,7 +27,7 @@ To deploy contract:
     `near call luky.semigoso.testnet first_player '{"vector": [3, 2, 1, 3, 4]}' --accountId bob.luky.semigoso.testnet --amount 2`
 8. Call the function check again to see the status of the game.
 9. Call the function second_player from the second account:
-    `near call luky.semigoso.testnet first_player '{"vector": [4, 6, 1, 4, 4]}' --accountId alice.luky.semigoso.testnet --amount 2`
+    `near call luky.semigoso.testnet second_player '{"vector": [4, 6, 1, 4, 4]}' --accountId alice.luky.semigoso.testnet --amount 2`
 10. Call the function check again to see the status of the game.
 11. Call the function check_ganador para revisas quien es el ganador.
 12. Revisa tu estado o llama a la funcion check_ganador.
