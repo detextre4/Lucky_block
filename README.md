@@ -42,5 +42,5 @@ Cosas que faltan:
 # Lucky_block
 >>>>>>> 735378f0ad13cc2c16574967b38e62a4f7eacd8e
 
-# link hacia maqueta de la app:
+# link hacia el modelo de la app:
 https://www.figma.com/proto/fLIPUHFqFMpNqtkdX7QLIW/LuckyBlock?node-id=408%3A174&scaling=scale-down&page-id=0%3A1&starting-point-node-id=31%3A3
