@@ -32,9 +32,9 @@ To deploy contract:
 11. Call the function check_ganador para revisas quien es el ganador.
 12. Revisa tu estado o llama a la funcion check_ganador.
 
-Se puede cambiar semigoso.testnet por la cuenta q se tenga.
-Se pueden cambiar el amount que se apuesta.
-Es importante que el segundo jugador acepte el amount de apuesta.
+Se puede cambiar semigoso.testnet por la cuenta q se tenga.\
+Se pueden cambiar el amount que se apuesta.\
+Es importante que el segundo jugador acepte el amount de apuesta.\
 
 Cosas que faltan:
     - Faltan los unit tests.
