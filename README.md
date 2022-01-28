@@ -36,7 +36,7 @@ Se puede cambiar semigoso.testnet por la cuenta q se tenga.\
 Se pueden cambiar el amount que se apuesta.\
 Es importante que el segundo jugador acepte el amount de apuesta.
 
-Cosas que faltan:
+Cosas que faltan:\
     - Faltan los unit tests.\
     - El codigo que genera el vector random no es compatible con .wasm. Se puede mejorar.\
     - La funcion cuando se empata no está implementada.
