@@ -1,4 +1,4 @@
-# Rust Smart Contract - Lucky_Game
+# Rust Smart Contract deployed on NEAR - Lucky_Game
 
 ## About the project
 
