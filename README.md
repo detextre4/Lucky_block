@@ -34,7 +34,7 @@ To deploy contract:
 
 Se puede cambiar semigoso.testnet por la cuenta q se tenga.\
 Se pueden cambiar el amount que se apuesta.\
-Es importante que el segundo jugador acepte el amount de apuesta.\
+Es importante que el segundo jugador acepte el amount de apuesta.
 
 Cosas que faltan:
     - Faltan los unit tests.
