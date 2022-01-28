@@ -1,4 +1,4 @@
-# Rust Smart Contract - Luky_Game
+# Rust Smart Contract - Lucky_Game
 
 ## About the project
 
