@@ -38,9 +38,8 @@ Es importante que el segundo jugador acepte el amount de apuesta.
 
 Cosas que faltan:
     - Faltan los unit tests.
-    
-# Lucky_block
->>>>>>> 735378f0ad13cc2c16574967b38e62a4f7eacd8e
-
+    - El codigo que genera el vector random no es compatible con .wasm. Se puede mejorar.
+    - La funcion cuando se empata no está implementada.
+   
 # link hacia el modelo de la app:
 https://www.figma.com/proto/fLIPUHFqFMpNqtkdX7QLIW/LuckyBlock?node-id=31%3A3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=31%3A3
