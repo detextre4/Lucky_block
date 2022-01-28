@@ -150,7 +150,7 @@ impl Contract {
         self.ganador = ganador_numero_;
         let jugadores_aux = self.jugadores.clone();
         let user_ganador = jugadores_aux[ganador_numero_].clone();
-        env::log_str("You have played. Find the winner using 'check_ganador' command.");
+        env::log_str("You have played. Find the winner using 'check_ganador' command or check your's account state.");
         Promise::new(user_ganador).transfer(amount_send * 2);
     }
 
