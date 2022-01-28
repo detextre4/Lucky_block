@@ -15,7 +15,7 @@ To deploy contract:
 1. Create a account to deploy the contract: 
     `near create-account luky.semigoso.testnet --masterAccount semigoso.testnet --initialBalance 50`
 2. Construct the .wasm file: ./build.sh
-    `./build.sh`
+    `./build.sh` 
 3. Deploy the contract in the account:
     `near deploy $ID --wasmFile res/luky_game.wasm`
 4. Initialize the contract:
@@ -41,3 +41,6 @@ Cosas que faltan:
     
 # Lucky_block
 >>>>>>> 735378f0ad13cc2c16574967b38e62a4f7eacd8e
+
+# link hacia maqueta de la app:
+https://www.figma.com/proto/fLIPUHFqFMpNqtkdX7QLIW/LuckyBlock?node-id=408%3A174&scaling=scale-down&page-id=0%3A1&starting-point-node-id=31%3A3
