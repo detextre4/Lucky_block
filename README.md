@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Rust Smart Contract Template
 
 ## Getting started
@@ -21,3 +22,6 @@ To get started with this template:
 
 * [Rust Smart Contract Quick Start](https://docs.near.org/docs/develop/contracts/rust/intro)
 * [Rust SDK Book](https://www.near-sdk.io/)
+=======
+# Lucky_block
+>>>>>>> 735378f0ad13cc2c16574967b38e62a4f7eacd8e
